@@ -1,0 +1,434 @@
+:root {
+    --clock-size: 700px;
+    --num-offset: calc(var(--clock-size)/2 - 50px);
+    --speed-mult: 1;
+    --second-hand-size: calc(var(--num-offset) - 25px);
+    --minute-hand-size: calc(var(--second-hand-size) * 0.8);
+    --hour-hand-size: calc(var(--minute-hand-size) * 0.7);
+    --tick-size: 3px;
+}
+
+body {
+    background-color: #242424;
+}
+
+#clockBody {
+    height: var(--clock-size);
+    width: var(--clock-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 999999999px;
+    border: 20px solid red;
+    box-shadow: inset 0 0 15px black;
+}
+
+.num {
+    width: var(--tick-size);
+    height: var(--tick-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left; 
+    transform: rotate(-90deg);
+}
+
+.tick {
+    width: var(--tick-size);
+    height: var(--tick-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: black;
+    border-radius: 9999px;
+    transform-origin: left; 
+}
+
+
+
+.num span {
+    position: absolute;
+    font-family: 'Orbitron';
+    font-size: xx-large;
+    top: 50%;
+    left: 50%;
+}
+
+.hand {
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    border-radius: 9999px;
+}
+
+#secondContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+#minContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+#hourContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(60deg);
+}
+
+#sec {
+    width: var(--second-hand-size);
+    height: 20px;
+    background-color: black;
+    
+    animation-duration: calc(60s/var(--speed-mult));
+    animation-timing-function: steps(15);
+}
+
+#min {
+    width: var(--minute-hand-size);
+    height: 20px;
+    background-color: black;
+
+    animation-duration: calc(3600s/var(--speed-mult));
+    animation-timing-function: steps(15);
+}
+
+#hour {
+    width: var(--hour-hand-size);
+    height: 20px;
+    background-color: black;
+
+    animation-duration: calc(43200s/var(--speed-mult));
+    animation-timing-function: steps(3);
+}
+
+
+@keyframes spin { 
+    0% {transform:translate(0%, -50%) rotate(-90deg);}
+    25% {transform:translate(0%, -50%) rotate(0deg);}
+    50% {transform:translate(0%, -50%) rotate(90deg);}
+    75% {transform:translate(0%, -50%) rotate(180deg);}
+    100% {transform:translate(0%, -50%) rotate(270deg);}
+    /* to {transform:rotate(270deg);} */
+}
+
+#center {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: orange;
+    border: 10px solid black;
+    border-radius: 9999999999999999px;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.num:nth-child(1) {
+    transform:   translate(0, -50%) rotate(-90deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(2) {
+    transform:   translate(0, -50%) rotate(-60deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(3) {
+    transform:   translate(0, -50%) rotate(-30deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(4) {
+    transform:   translate(0, -50%) rotate(0deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(5) {
+    transform:   translate(0, -50%) rotate(30deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(6) {
+    transform:   translate(0, -50%) rotate(60deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(7) {
+    transform:   translate(0, -50%) rotate(90deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(8) {
+    transform:   translate(0, -50%) rotate(120deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(9) {
+    transform:   translate(0, -50%) rotate(150deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(10) {
+    transform:   translate(0, -50%) rotate(180deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(11) {
+    transform:   translate(0, -50%) rotate(210deg) translateX(var(--num-offset));
+}
+
+.num:nth-child(12) {
+    transform:   translate(0, -50%) rotate(240deg) translateX(var(--num-offset));
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.num:nth-child(1) span {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.num:nth-child(2) span {
+    transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.num:nth-child(3) span {
+    transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.num:nth-child(4) span {
+    transform: translate(-50%, -50%) rotate(-0deg);
+}
+
+.num:nth-child(5) span {
+    transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.num:nth-child(6) span {
+    transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+.num:nth-child(7) span {
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.num:nth-child(8) span {
+    transform: translate(-50%, -50%) rotate(-120deg);
+}
+
+.num:nth-child(9) span {
+    transform: translate(-50%, -50%) rotate(-150deg);
+}
+
+.num:nth-child(10) span {
+    transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.num:nth-child(11) span {
+    transform: translate(-50%, -50%) rotate(-210deg);
+}
+
+.num:nth-child(12) span {
+    transform: translate(-50%, -50%) rotate(-240deg);
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.tick:nth-child(1) {
+	transform: translate(0, -50%) rotate(-84deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(2) {
+	transform: translate(0, -50%) rotate(-78deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(3) {
+	transform: translate(0, -50%) rotate(-72deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(4) {
+	transform: translate(0, -50%) rotate(-66deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(5) {
+	transform: translate(0, -50%) rotate(-54deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(6) {
+	transform: translate(0, -50%) rotate(-48deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(7) {
+	transform: translate(0, -50%) rotate(-42deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(8) {
+	transform: translate(0, -50%) rotate(-36deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(9) {
+	transform: translate(0, -50%) rotate(-24deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(10) {
+	transform: translate(0, -50%) rotate(-18deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(11) {
+	transform: translate(0, -50%) rotate(-12deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(12) {
+	transform: translate(0, -50%) rotate(-6deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(13) {
+	transform: translate(0, -50%) rotate(6deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(14) {
+	transform: translate(0, -50%) rotate(12deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(15) {
+	transform: translate(0, -50%) rotate(18deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(16) {
+	transform: translate(0, -50%) rotate(24deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(17) {
+	transform: translate(0, -50%) rotate(36deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(18) {
+	transform: translate(0, -50%) rotate(42deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(19) {
+	transform: translate(0, -50%) rotate(48deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(20) {
+	transform: translate(0, -50%) rotate(54deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(21) {
+	transform: translate(0, -50%) rotate(66deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(22) {
+	transform: translate(0, -50%) rotate(72deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(23) {
+	transform: translate(0, -50%) rotate(78deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(24) {
+	transform: translate(0, -50%) rotate(84deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(25) {
+	transform: translate(0, -50%) rotate(96deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(26) {
+	transform: translate(0, -50%) rotate(102deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(27) {
+	transform: translate(0, -50%) rotate(108deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(28) {
+	transform: translate(0, -50%) rotate(114deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(29) {
+	transform: translate(0, -50%) rotate(126deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(30) {
+	transform: translate(0, -50%) rotate(132deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(31) {
+	transform: translate(0, -50%) rotate(138deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(32) {
+	transform: translate(0, -50%) rotate(144deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(33) {
+	transform: translate(0, -50%) rotate(156deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(34) {
+	transform: translate(0, -50%) rotate(162deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(35) {
+	transform: translate(0, -50%) rotate(168deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(36) {
+	transform: translate(0, -50%) rotate(174deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(37) {
+	transform: translate(0, -50%) rotate(186deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(38) {
+	transform: translate(0, -50%) rotate(192deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(39) {
+	transform: translate(0, -50%) rotate(198deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(40) {
+	transform: translate(0, -50%) rotate(204deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(41) {
+	transform: translate(0, -50%) rotate(216deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(42) {
+	transform: translate(0, -50%) rotate(222deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(43) {
+	transform: translate(0, -50%) rotate(228deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(44) {
+	transform: translate(0, -50%) rotate(234deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(45) {
+	transform: translate(0, -50%) rotate(246deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(46) {
+	transform: translate(0, -50%) rotate(252deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(47) {
+	transform: translate(0, -50%) rotate(258deg) translateX(var(--num-offset));
+}
+
+.tick:nth-child(48) {
+	transform: translate(0, -50%) rotate(264deg) translateX(var(--num-offset));
+}

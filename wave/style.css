@@ -1,0 +1,69 @@
+body {
+    background-color: #242424;
+}
+
+.waveBox {
+    width: 50%;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: white; */
+}
+
+.waveCell{
+height: 80%;
+width: 7.5%;
+background-color: skyblue;
+border-radius: 9999px;
+animation-name: example;
+animation-duration: 1s;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+animation-timing-function: steps(10, end);
+}
+
+@keyframes example {
+    from {height: 80%;}
+    to {height: 20%;}
+}
+
+#c2{
+    animation-delay: 0.1s;
+}
+
+#c3{
+    animation-delay: 0.2s;
+}
+
+#c4{
+    animation-delay: 0.3s;
+}
+
+#c5{
+    animation-delay: 0.4s;
+}
+
+#c6{
+    animation-delay: 0.5s;
+}
+
+#c7{
+    animation-delay: 0.6s;
+}
+
+#c8{
+    animation-delay: 0.7s;
+}
+
+#c9{
+    animation-delay: 0.8s;
+}
+
+#c10{
+    animation-delay: 0.9s;
+}
